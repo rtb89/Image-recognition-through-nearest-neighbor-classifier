@@ -1,8 +1,4 @@
-    ----------------------------------------------------
-	Your MATLAB license will expire in 27 days.
-	Please contact your system administrator or
-	MathWorks to renew this license.
-    ----------------------------------------------------
+
    %Extracting the feature matrices for all 10 image file
    %matrix
 A= imgfts('a.jpg') ;            		                              %80X6
@@ -45,15 +41,9 @@ end
 end
  count
 
-count =
-
-   387
 % Accuracy on the training set
  acc_training1= (count/800)*100
 
-acc_training1 =
-
-   48.3750
 
 % Creating the class matrix for the test image using repmat  (70 X 1 Char)
 testClass= [repmat('a',7 ,1); repmat('d',7,1); repmat('m',7,1); repmat('n',7,1); repmat('o',7,1);repmat('p',7,1); repmat('q',7,1); repmat('r',7,1); repmat('u',7,1); repmat('w',7,1)];
@@ -87,9 +77,6 @@ end
  end
  acc_test1=c*100/70
 
-acc_test1 =
-
-   51.4286
 
  showcharlabels('test.jpg',test_predicted1,['a','d','m','n','o','p','q','r','u','w'])
 Warning: Image is too big to fit on screen; displaying at 67% 
@@ -129,10 +116,6 @@ end
 end
 acc_training2=(count/800)*100
 
-acc_training2 =
-
-   58.75
-
 % Normalizzing the feature matarix of the test set by iterating though each column of each
 % row
  for i=1:70
@@ -162,10 +145,6 @@ end
 % Calculating the acccuracy of predicting the test matrix
 acc_test2=c*100/70
 
-acc_test2 =
-
-   51.4286
-
  showcharlabels('test.jpg',test_predicted2,['a','d','m','n','o','p','q','r','u','w'])
 
 
@@ -190,12 +169,6 @@ end
 % Calculating the Accuracy
 acc_training3= (count/800)*100
 
-acc_training3 =
-
-    59.62
-    
- 
-
 % Predicting the test class using the 5 nearest neighbor elements set
 for i=1:5
 test_pred3(:,i)=trainingClass(testN_dist_I(:,i));    % (70 X 5) matrix
@@ -215,10 +188,6 @@ end
 end
 acc_test3= (c/70)*100
 
-acc_test3 =
-
-   55.71
-  
 showcharlabels('test.jpg',test_predicted3,['a','d','m','n','o','p','q','r','u','w'])
    
    %  1.10
@@ -262,18 +231,9 @@ end
 
  count
 
-count =
-
-   581
-
    % Calculating the accuracy
  acc_training4= (count/800)*100
 
-acc_training4 =
-
-   87.625
-
-   
  % Extracting the enchanced feature matrix of the test file
  test_featureX= imgfts2('test.jpg');             %(70 X 13 double)
 
@@ -307,10 +267,6 @@ end
 % Calculating the accuracy on the test set (k=5)
  acc_test4=c*100/70
 
-acc_test4 =
-
-   71.4286 
-   
 showcharlabels('test.jpg',test_predicted4,['a','d','m','n','o','p','q','r','u','w'])
 
 
